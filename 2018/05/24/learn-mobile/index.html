@@ -1,0 +1,1377 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="移动端知识点, 前端, Linux, Mac, Vim">
+    <meta name="description" content="本文主要讲述刚接触移动端的开发人员可能遇到的一些坑。
+移动端的Click事件click事件，对于移动端的兼容性不是很好，有的设备上可能会失效问题。
+有时候在由于一些原因，需要在 li 标签上添加点击事件，这时候使用click点击事件就可能会">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>移动端知识点 | lttztt</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lttztt</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>首页</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>标签</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/categories" class="waves-effect waves-light">
+						
+						<i class="fa fa-bookmark"></i>
+						
+						<span>分类</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>归档</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>关于</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/friends" class="waves-effect waves-light">
+						
+						<i class="fa fa-address-book"></i>
+						
+						<span>友情链接</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lttztt</div>
+        <div class="logo-desc">
+            
+            欢迎来到lttztt的个人站
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-user-circle-o"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lttztt" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lttztt" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        移动端知识点
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/" target="_blank">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/移动端/" target="_blank">
+                                <span class="chip bg-color">移动端</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-05-24
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本文主要讲述刚接触移动端的开发人员可能遇到的一些坑。</p>
+<h2 id="移动端的Click事件"><a href="#移动端的Click事件" class="headerlink" title="移动端的Click事件"></a>移动端的Click事件</h2><p>click事件，对于移动端的兼容性不是很好，有的设备上可能会失效问题。</p>
+<p>有时候在由于一些原因，需要在 li 标签上添加点击事件，这时候使用click点击事件就可能会失灵。即点击非 a 链接或 button 按钮的时候，click事件不起作用。</p>
+<p>click事件触发机制为：touchstart -&gt; touchend -&gt; click</p>
+<p>解决方法：</p>
+<h3 id="touchend"><a href="#touchend" class="headerlink" title="touchend"></a>touchend</h3><p>使用touchend代替click(不推荐)</p>
+<pre class=" language-bash"><code class="language-bash">  <span class="token variable"><span class="token variable">$(</span>document<span class="token variable">)</span></span>.on<span class="token punctuation">(</span><span class="token string">'touchend'</span>,<span class="token string">'#btn'</span>,function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //add event code<span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>  touchend事件不推荐使用，因为：touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend事件，造成误操作。</p>
+<h3 id="tap"><a href="#tap" class="headerlink" title="tap"></a>tap</h3><p>使用tap代替click(常用，推荐)</p>
+<p>这里有一个需要注意的地方，就是js的原生事件中是没有tap事件的，需要用jq框架或mui等框架封装的tap事件。</p>
+<pre class=" language-bash"><code class="language-bash">  <span class="token variable"><span class="token variable">$(</span>document<span class="token variable">)</span></span>.on<span class="token punctuation">(</span><span class="token string">'tap'</span>,<span class="token string">'#btn'</span>,function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //add event code<span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>给需要点击的标签添加CSS属性。</p>
+<p>比如需要点击ul列表中的每个li项，可以给 li 添加 css 属性,使其支持click点击事件</p>
+<pre class=" language-bash"><code class="language-bash">  ul <span class="token operator">></span> li <span class="token punctuation">{</span>cursor:pointer<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
+<p>  这个方法我这边使用目前没出现什么问题，不清楚具体的浏览器内核解析过程。</p>
+<h2 id="移动端适配rem"><a href="#移动端适配rem" class="headerlink" title="移动端适配rem"></a>移动端适配rem</h2><p>移动端的适配一直以来，对开发人员就是一个比较难以解决的问题，我也只是把我接触过的适配方法写下来：</p>
+<p>首先就是每个页面必须的声明部分</p>
+<p>​``` bash</p>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+​```
+### 简单适配
+
+<p>适配代码需要放在css文件引入之前运行。css单位使用rem.</p>
+<p>​<code>bash
+window.onload = function(){
+  /*720代表设计师给的设计稿的宽度，你的设计稿是多少，就写多少;100代表换算比例，这里写100是
+    为了以后好算,比如，你测量的一个宽度是100px,就可以写为1rem,以及1px=0.01rem等等*/
+  getRem(720,100)
+};
+window.onresize = function(){
+  getRem(720,100)
+};
+function getRem(pwidth,prem){
+  var html = document.getElementsByTagName(&quot;html&quot;)[0];
+  var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+  html.style.fontSize = oWidth/pwidth*prem + &quot;px&quot;;
+}
+​</code></p>
+<h3 id="小米官网写法"><a href="#小米官网写法" class="headerlink" title="小米官网写法"></a>小米官网写法</h3><p>​<code>bash
+!function(n){
+  var e=n.document, //获取document
+  t=e.documentElement,  //获取根节点html
+  i=720,  //初始值720px
+  d=i/100,  //假设100px为1rem，那么720px为7.2rem
+  o=&quot;orientationchange&quot;in n?&quot;orientationchange&quot;:&quot;resize&quot;, //判断是否有改变横屏事件，没有的话用resize事件
+  a=function(){
+      var n=t.clientWidth||320; //获取手机屏幕宽度
+      n &gt; 720 &amp;&amp; (n=720), //手机屏幕宽度大于720px默认设置为720px，即最大宽度为720px 
+      t.style.fontSize=n/d+&quot;px&quot;    //设置根元素的字体大小为手机屏幕宽度/7.2,为上面自己定义的，当然你可以定义成别的，8.2，9.4都行
+  }; 
+  e.addEventListener &amp;&amp; (n.addEventListener(o,a,!1), //判断是否有addeventlistener方法，如果有，就绑定上面判断的o事件
+  e.addEventListener(&quot;DOMContentLoaded&quot;,a,!1))    //绑定DOMContentLoaded事件
+}(window);
+​</code></p>
+<h2 id="微信分享的缩略图和简介"><a href="#微信分享的缩略图和简介" class="headerlink" title="微信分享的缩略图和简介"></a>微信分享的缩略图和简介</h2><p>官方文档链接 <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115" target="_blank" rel="noopener">https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115</a></p>
+<p>声明shareWx方法</p>
+<p>​``` bash<br>function shareWx(url,img,title,desc,callBack){<br>  $.ajax({<br>    url: ‘<strong>**</strong>‘, //获取微信公众平台的各种参数接口<br>    type: “POST”,<br>    data: {<br>      url: window.location.href,<br>      appid: “****” //微信公众号的appid<br>    },<br>    dataType: “json”,<br>    success: function (data) {<br>      if (data.nonceStr != null &amp;&amp; data.nonceStr != “”) {<br>        wx.config({<br>          debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。<br>          appId: data.appId, // 必填，公众号的唯一标识<br>          timestamp: data.timestamp, // 必填，生成签名的时间戳<br>          nonceStr: data.nonceStr, // 必填，生成签名的随机串<br>          signature: data.signature,// 必填，签名，见附录1<br>          jsApiList: [‘onMenuShareTimeline’, ‘onMenuShareAppMessage’, ‘hideAllNonBaseMenuItem’, ‘showMenuItems’,’addCard’] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2<br>        });<br>        //分享链接的缩略图<br>        var imgUrl = img;<br>        //分享链接的链接地址<br>        var lineLink = url;<br>        //分享链接的描述信息<br>        var descContent = desc;<br>        //分享链接的标题<br>        var shareTitle = title;<br>        //一般为空就可以<br>        var appid = ‘’;<br>        //分享给好友<br>        wx.ready(function () {<br>          wx.onMenuShareTimeline({<br>            title: shareTitle, // 分享标题<br>            link: lineLink, // 分享链接<br>            imgUrl: imgUrl, // 分享图标<br>            success: function () {<br>              // 用户确认分享后执行的回调函数<br>              if(typeof callBack == “function”){<br>                callBack();<br>              }<br>            },<br>            cancel: function () {<br>              // 用户取消分享后执行的回调函数<br>            }<br>          });<br>          wx.onMenuShareAppMessage({<br>            title: shareTitle, // 分享标题<br>            desc: descContent, // 分享描述<br>            link: lineLink, // 分享链接<br>            imgUrl: imgUrl, // 分享图标<br>            type: ‘’, // 分享类型,music、video或link，不填默认为link<br>            dataUrl: ‘’, // 如果type是music或video，则要提供数据链接，默认为空<br>            success: function () {<br>              // 用户确认分享后执行的回调函数<br>              if(typeof callBack == “function”){<br>                callBack();<br>              }<br>            },<br>            cancel: function () {<br>              // 用户取消分享后执行的回调函数<br>            }<br>          });<br>          wx.hideAllNonBaseMenuItem();<br>          wx.showMenuItems({<br>            menuList: [‘menuItem:share:appMessage’,’menuItem:share:timeline’] // 要显示的菜单项，所有menu项见附录3<br>          });<br>        });</p>
+<pre><code>    wx.error(function (res) {
+      //alert(&quot;验证不通过&quot;);
+      // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+    });
+  }
+}</code></pre><p>  });<br>}<br>​```</p>
+<p>调用分享的方法，调用前需要在页面先引入微信官方提供的js</p>
+<p>​``` bash<br>// 页面引入</p>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  //页面引入js文件
+<p>// 调用方法<br>var url = “<strong>*”;    //分享链接的URL<br>var img = “test.jpg”; //分享的缩略图<br>var title = “*</strong>“;    //分享链接的标题<br>var content = “****”; //分享链接的描述信息<br>shareWx(url, img, title, content);  //调用方法<br>​```</p>
+<p>附录1：<a href="https://mp.weixin.qq.com/wiki?action=doc&id=mp1421141115&t=0.3462185509276481#62" target="_blank" rel="noopener">JS-SDK使用权限签名算法</a><br>附录2：<a href="https://mp.weixin.qq.com/wiki?action=doc&id=mp1421141115&t=0.3462185509276481#63" target="_blank" rel="noopener">所有JS接口列表</a><br>附录3：<a href="https://mp.weixin.qq.com/wiki?action=doc&id=mp1421141115&t=0.3462185509276481#64" target="_blank" rel="noopener">所有菜单项列表</a></p>
+<h2 id="video视频播放问题"><a href="#video视频播放问题" class="headerlink" title="video视频播放问题"></a>video视频播放问题</h2><p>有的视频，使用video标签播放的时候，Android端可以播放，但IOS端有时候不能播放视频。</p>
+<p>可以转换为 .mp4 格式。</p>
+<p>不过有时候 .mp4 格式可能也会无法播放，这是因为 mp4 格式中，视频编码方式也需要设置正确。</p>
+<p>这里我用【格式工厂】软件来说明。</p>
+<p>格式工厂 -&gt; mp4 -&gt; 输出配置 -&gt; 视频编码:AVC(H264)</p>
+<h2 id="清除微信H5缓存"><a href="#清除微信H5缓存" class="headerlink" title="清除微信H5缓存"></a>清除微信H5缓存</h2><p>之前在调试开发的过程中，遇到一个问题，就是：无论怎样刷新微信页面，或者重启web服务器，都无法清除缓存的css和js数据。</p>
+<p>现在推荐2种不同手机的清除缓存方法，用来清除微信浏览器缓存。</p>
+<h3 id="IOS端"><a href="#IOS端" class="headerlink" title="IOS端"></a>IOS端</h3><ul>
+<li>IOS端浏览器内置的刷新，貌似可以清除css和js缓存，我这边测试的时候，是可以清除缓存的。</li>
+<li>IOS端：我 -&gt; 设置 -&gt; 通用 -&gt; 微信存储空间 -&gt; 清理微信缓存。即可清除缓存。</li>
+</ul>
+<p><em>今天(2018/06/29)遇到了点击“清理微信缓存”后，返回去查看页面还是没有变化的问题，后来多点了几次页面右上角的刷新，就解决了。</em></p>
+<h3 id="Android端"><a href="#Android端" class="headerlink" title="Android端"></a>Android端</h3><p>在微信浏览器访问 <a href="http://debugx5.qq.com" target="_blank" rel="noopener">http://debugx5.qq.com</a> (X5 调试页面)，然后滚动到页面最下面。</p>
+<p>勾选 Cookie, 文件缓存, 广告过滤缓存, DNS缓存 ,然后点击右侧的 “清除” 按钮。即可清除缓存。</p>
+<p><em>注意：此方法不适用于IOS端。</em></p>
+<h2 id="微信H5的a链接点击失灵"><a href="#微信H5的a链接点击失灵" class="headerlink" title="微信H5的a链接点击失灵"></a>微信H5的a链接点击失灵</h2><p>微信内置浏览器的 a 链接，来回跳转几次就出现了跳转加载进度条，但是就是不跳转，也没有任何反应的情况。</p>
+<p>解决办法：</p>
+<p>给 a 链接的 href 属性添加任意参数，例如：</p>
+<p>​<code>bash
+&lt;a href=&quot;www.baidu.com?2018&quot;&gt;&lt;/a&gt;
+​</code></p>
+<p>就可以解决 a 链接不跳转的问题。</p>
+<h2 id="IOS端长按屏幕变暗"><a href="#IOS端长按屏幕变暗" class="headerlink" title="IOS端长按屏幕变暗"></a>IOS端长按屏幕变暗</h2><p>IOS端的微信H5页面，有时候长按 div 或带有 background-image 的时候，屏幕会变暗.</p>
+<p>解决办法：</p>
+<p>给CSS添加以下属性：</p>
+<p>​``` bash</p>
+<ul>
+<li>{ -webkit-tap-highlight-color:transparent;}<br>​```<br>即可解决上述问题。</li>
+</ul>
+<h2 id="audio音乐标签的方法调用"><a href="#audio音乐标签的方法调用" class="headerlink" title="audio音乐标签的方法调用"></a>audio音乐标签的方法调用</h2><p>使用jq或者zepto时，想要调用音乐的play()方法时，发现 $(“#audio”).play(); 不起作用，并且报错 play()方法 undefined。</p>
+<p>解决办法：</p>
+<p>使用原生document方法即可调用</p>
+<p>​<code>bash
+var audio = document.getElementById(&#39;audio&#39;);
+audio.play();
+audio.stop();
+​</code></p>
+<h2 id="IOS的alert弹窗有域名"><a href="#IOS的alert弹窗有域名" class="headerlink" title="IOS的alert弹窗有域名"></a>IOS的alert弹窗有域名</h2><p>微信内置的H5浏览器，在IOS端的alert()弹框会带上域名，很影响页面美观。在Android端不会带上域名。</p>
+<p>解决办法:</p>
+<p>在js中加上如下代码，重置window的alert()方法。</p>
+<p>​<code>bash
+window.alert = function(name){
+  var iframe = document.createElement(&quot;IFRAME&quot;);
+  iframe.style.display=&quot;none&quot;;
+  iframe.setAttribute(&quot;src&quot;, &#39;data:text/plain,&#39;);
+  document.documentElement.appendChild(iframe);
+  window.frames[0].window.alert(name);
+  iframe.parentNode.removeChild(iframe);
+};
+​</code></p>
+<h2 id="IOS的H5页面text-decoration无效"><a href="#IOS的H5页面text-decoration无效" class="headerlink" title="IOS的H5页面text-decoration无效"></a>IOS的H5页面text-decoration无效</h2><p>微信内置的H5浏览器，在IOS端CSS中的 text-decoration 属性不生效，在Android端显示正常。</p>
+<p>解决办法：</p>
+<p>添加 -webkit- 前缀</p>
+<p>​<code>bash
+.test{
+  -webkit-text-decoration: underline solid #fff;
+  text-decoration: underline solid #fff;
+}
+​</code></p>
+<hr>
+<p>以上是我在开发过程中遇到的问题，后续再更新。。。</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《移动端知识点》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/05/24/learn-mobile/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                lttztt
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Mw4gli0DEi5PNw9aUC8Psveh-gzGzoHsz',
+        appKey: 'cOhYzDDrLg1j0YagOeH4QvNo',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/06/10/javascript中字符串的三个方法的对比slice-substring-substr/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="javascript中字符串的三个方法的对比slice,substring,substr">
+                        
+                        <span class="card-title">javascript中字符串的三个方法的对比slice,substring,substr</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+slice，substring,substr三个函数都是截取字符串，但是对参数的处理有区别
+
+参数处理相似的两个函数式slice和substring
+slice(start,end)和substring(start,end)
+他们两个的e
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-06-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Front-End/" class="post-category" target="_blank">
+                                    Front-End
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/05/14/前端跨域的解决方法/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="前端跨域的解决方法">
+                        
+                        <span class="card-title">前端跨域的解决方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            什么是跨域 ?跨域是指一个域下的文档或脚本试图去请求另一个域下的资源, 这里跨域是广义的.
+广义的跨域:
+
+资源跳转：a链接、重定向、表单提交
+资源嵌入： 、、、等DOM标签， 还有样式中的 background: url()、@font-
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-05-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Front-End/" class="post-category" target="_blank">
+                                    Front-End
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&nbsp;&copy;<a href="https://lttztt.github.io/" target="_blank">lttztt</a>&nbsp;基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
+            <br>
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("03/15/2017 00:00:00");
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lttztt" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zhethink@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1169115474" class="tooltipped" data-tooltip="QQ联系我: 1169115474" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

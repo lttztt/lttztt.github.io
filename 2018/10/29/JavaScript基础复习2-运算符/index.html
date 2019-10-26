@@ -1,0 +1,1572 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="JavaScript基础复习2-运算符, 前端, Linux, Mac, Vim">
+    <meta name="description" content="10种算术运算符
+加法运算符：x + y
+减法运算符： x - y
+乘法运算符： x * y
+除法运算符：x / y
+指数运算符：x ** y
+余数运算符：x % y
+自增运算符：++x 或者 x++
+自减运算符：--x 或者 x--
+数值">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>JavaScript基础复习2-运算符 | lttztt</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lttztt</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>首页</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>标签</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/categories" class="waves-effect waves-light">
+						
+						<i class="fa fa-bookmark"></i>
+						
+						<span>分类</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>归档</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>关于</span>
+					</a>
+          
+        </li>
+    
+	<li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/friends" class="waves-effect waves-light">
+						
+						<i class="fa fa-address-book"></i>
+						
+						<span>友情链接</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lttztt</div>
+        <div class="logo-desc">
+            
+            欢迎来到lttztt的个人站
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-user-circle-o"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa fa-fw fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lttztt" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lttztt" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        JavaScript基础复习2-运算符
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/" target="_blank">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Front-End/" class="post-category" target="_blank">
+                                Front-End
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-10-29
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="10种算术运算符"><a href="#10种算术运算符" class="headerlink" title="10种算术运算符"></a>10种算术运算符</h2><ul>
+<li><strong>加法运算符</strong>：<code>x + y</code></li>
+<li><strong>减法运算符</strong>： <code>x - y</code></li>
+<li><strong>乘法运算符</strong>： <code>x * y</code></li>
+<li><strong>除法运算符</strong>：<code>x / y</code></li>
+<li><strong>指数运算符</strong>：<code>x ** y</code></li>
+<li><strong>余数运算符</strong>：<code>x % y</code></li>
+<li><strong>自增运算符</strong>：<code>++x</code> 或者 <code>x++</code></li>
+<li><strong>自减运算符</strong>：<code>--x</code> 或者 <code>x--</code></li>
+<li><strong>数值运算符</strong>： <code>+x</code></li>
+<li><strong>负数值运算符</strong>：<code>-x</code></li>
+</ul>
+<h3 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h3><ul>
+<li><p>JavaScript 允许非数值的相加</p>
+</li>
+<li><p>两个字符串相加，这时加法运算符会变成连接运算符，返回一个新的字符串，将两个原字符串连接在一起。</p>
+</li>
+<li><p>一个运算子是字符串，另一个运算子是非字符串，这时非字符串会转成字符串，再连接在一起。</p>
+</li>
+<li><p>加法运算符是在运行时决定，到底是执行相加，还是执行连接。根据不同的运算子导致不一样的语法行为叫重载</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token string">'3'</span> <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">5</span> <span class="token comment" spellcheck="true">// "345"</span>
+<span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token string">'5'</span> <span class="token comment" spellcheck="true">// "75"</span></code></pre>
+</li>
+<li><p>除了加法运算符，其他算术运算符（比如减法、除法和乘法）都不会发生重载。它们的规则是：所有运算子一律转为数值，再进行相应的数学运算。</p>
+</li>
+</ul>
+<h3 id="对象的相加"><a href="#对象的相加" class="headerlink" title="对象的相加"></a>对象的相加</h3><p>如果运算子是对象, 必须先转为原始类型的值,再相加, 对象转原始值规则: </p>
+<ol>
+<li><p>先调用对象的<code>valueOf</code>, 对象的<code>valueOf</code>方法总是返回对象自身</p>
+</li>
+<li><p>这时再自动调用对象的<code>toString</code>方法，将其转为字符串。</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> p<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { p: 1 }</span>
+obj<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// "[object Object]"</span></code></pre>
+</li>
+</ol>
+<p>知道了这个规则以后，就可以自己定义<code>valueOf</code>方法或<code>toString</code>方法，得到想要的结果。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  valueOf<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+obj <span class="token operator">+</span> <span class="token number">2</span> <span class="token comment" spellcheck="true">// 3</span></code></pre>
+<h3 id="余数"><a href="#余数" class="headerlink" title="余数 (%)"></a>余数 (%)</h3><p>运算结果的正负号由第一个运算子的正负号决定。</p>
+<p>所以，为了得到负数的正确余数值，可以先使用绝对值函数。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 错误的写法</span>
+<span class="token keyword">function</span> <span class="token function">isOdd</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">isOdd</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span>
+<span class="token function">isOdd</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span>
+
+<span class="token comment" spellcheck="true">// 正确的写法</span>
+<span class="token keyword">function</span> <span class="token function">isOdd</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">isOdd</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token function">isOdd</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false      </span></code></pre>
+<h3 id="自增自减"><a href="#自增自减" class="headerlink" title="自增自减"></a>自增自减</h3><ul>
+<li><p>自增和自减运算符，是一元运算符，只需要一个运算子。它们的作用是将运算子首先转为数值，然后加上1或者减去1。它们会修改原始变量。</p>
+</li>
+<li><p>运算之后，变量的值发生变化，这种效应叫做运算的副作用（side effect）。自增和自减运算符是仅有的两个具有副作用的运算符，其他运算符都不会改变变量的值。</p>
+</li>
+</ul>
+<p>自增和自减运算符有一个需要注意的地方，就是放在变量之后，会先返回变量操作前的值，再进行自增/自减操作；放在变量之前，会先进行自增/自减操作，再返回变量操作后的值。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+x<span class="token operator">++</span> <span class="token comment" spellcheck="true">// 1</span>
+<span class="token operator">++</span>y <span class="token comment" spellcheck="true">// 2</span></code></pre>
+<h3 id="数值运算符-负值运算符"><a href="#数值运算符-负值运算符" class="headerlink" title="数值运算符/负值运算符"></a>数值运算符/负值运算符</h3><blockquote>
+<p>数值运算符号和负数值运算符，都会返回一个新的值，而不会改变原始变量的值。</p>
+</blockquote>
+<p>数值运算符（<code>+</code>）同样使用加号，但它是一元运算符（只需要一个操作数），而加法运算符是二元运算符（需要两个操作数）。</p>
+<p><strong>数值运算符的作用在于可以将任何值转为数值（与<code>Number</code>函数的作用相同）</strong></p>
+<pre class=" language-js"><code class="language-js"><span class="token operator">+</span><span class="token boolean">true</span> <span class="token comment" spellcheck="true">// 1</span>
+<span class="token operator">+</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// 0</span>
+<span class="token operator">+</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// NaN</span></code></pre>
+<p>负数值运算符（<code>-</code>），也同样具有将一个值转为数值的功能，只不过得到的值正负相反。连用两个负数值运算符(需要用括号, 不然是自减运算符)，等同于数值运算符。</p>
+<h3 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符 (**)"></a>指数运算符 (**)</h3><p>指数运算符（<code>**</code>）完成指数运算，前一个运算子是底数，后一个运算子是指数。</p>
+<p>指数运算符是右结合, 即多个指数运算符连用时,先进行最右边的计算.</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 相当于 2 ** (3 ** 2)</span>
+<span class="token number">2</span> <span class="token operator">**</span> <span class="token number">3</span> <span class="token operator">**</span> <span class="token number">2</span>   <span class="token comment" spellcheck="true">// 512</span></code></pre>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符 (=)"></a>赋值运算符 (=)</h3><p>下面是与算术运算符的结合。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 等同于 x = x + y</span>
+x <span class="token operator">+</span><span class="token operator">=</span> y
+
+<span class="token comment" spellcheck="true">// 等同于 x = x - y</span>
+x <span class="token operator">-</span><span class="token operator">=</span> y
+
+<span class="token comment" spellcheck="true">// 等同于 x = x * y</span>
+x <span class="token operator">*</span><span class="token operator">=</span> y
+
+<span class="token comment" spellcheck="true">// 等同于 x = x / y</span>
+x <span class="token operator">/</span><span class="token operator">=</span> y
+
+<span class="token comment" spellcheck="true">// 等同于 x = x % y</span>
+x <span class="token operator">%</span><span class="token operator">=</span> y
+
+<span class="token comment" spellcheck="true">// 等同于 x = x ** y</span>
+x <span class="token operator">**</span><span class="token operator">=</span> y</code></pre>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><p>JavaScript 一共提供了8个比较运算符。</p>
+<ul>
+<li><code>&gt;</code> 大于运算符</li>
+<li><code>&lt;</code> 小于运算符</li>
+<li><code>&lt;=</code> 小于或等于运算符</li>
+<li><code>&gt;=</code> 大于或等于运算符</li>
+<li><code>==</code> 相等运算符</li>
+<li><code>===</code> 严格相等运算符</li>
+<li><code>!=</code> 不相等运算符</li>
+<li><code>!==</code> 严格不相等运算符</li>
+</ul>
+<h3 id="字符串的比较"><a href="#字符串的比较" class="headerlink" title="字符串的比较"></a>字符串的比较</h3><p>按照字典顺序进行比较( 实际上是比较Unicode码点)</p>
+<h3 id="非字符串的比较"><a href="#非字符串的比较" class="headerlink" title="非字符串的比较"></a>非字符串的比较</h3><p><strong>如果运算子都不是字符串</strong></p>
+<ol>
+<li><p>都是原始类型的值, 则先转成数值在比较</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token number">5</span> <span class="token operator">></span> <span class="token string">'4'</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">// 等同于 5 > Number('4')</span>
+<span class="token comment" spellcheck="true">// 即 5 > 4</span>
+
+<span class="token boolean">true</span> <span class="token operator">></span> <span class="token boolean">false</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">// 等同于 Number(true) > Number(false)</span>
+<span class="token comment" spellcheck="true">// 即 1 > 0</span>
+
+<span class="token number">2</span> <span class="token operator">></span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token comment" spellcheck="true">// 等同于 2 > Number(true)</span>
+<span class="token comment" spellcheck="true">// 即 2 > 1</span></code></pre>
+</li>
+<li><p>NaN 和 任何值比较都 返回 <code>false</code></p>
+</li>
+</ol>
+<p><strong>对象</strong></p>
+<p>如果运算子是对象，会转为原始类型的值，再进行比较。</p>
+<p>对象转换成原始类型的值，算法是先调用<code>valueOf</code>方法；如果返回的还是对象，再接着调用<code>toString</code>方法</p>
+<h3 id="严格相等运算符"><a href="#严格相等运算符" class="headerlink" title="严格相等运算符 (===)"></a>严格相等运算符 (===)</h3><p>JavaScript有提供了两种相等运算符: <code>==</code>和<code>===</code></p>
+<blockquote>
+<p>相等运算符(<code>==</code>)是比较两个值是否相等,严格相等运算符(<code>===</code>)比较的是他们是否为’同一个值’, 不是同一类型, <code>===</code> 返回<code>false</code> ,<code>==</code>会先转为同一类型,在比较</p>
+</blockquote>
+<ul>
+<li><p>NaN和任何值都不相等(包括自身)</p>
+</li>
+<li><p>正<code>0</code>等于负<code>0</code></p>
+</li>
+<li><p>符合类型(对象, 数组, 函数)比较是, 不是比它们值是否相等, 而是比较它们是否是同一个地址</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">===</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// false</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true">// false</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">===</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span></code></pre>
+</li>
+<li><p>如果两个变量引用同一个对象，则它们相等。</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> v1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> v2 <span class="token operator">=</span> v1<span class="token punctuation">;</span>
+v1 <span class="token operator">===</span> v2 <span class="token comment" spellcheck="true">// true</span></code></pre>
+</li>
+<li><p><code>undefined</code>和<code>null</code>与自身严格相等</p>
+</li>
+<li><p>由于变量声明后默认值是<code>undefined</code>，因此两个只声明未赋值的变量是相等的。</p>
+</li>
+</ul>
+<h3 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符 (==)"></a>相等运算符 (==)</h3><blockquote>
+<p> 它遇到相同类型的数据时, 与<code>===</code>完全一样, 比较不同类型的数据时，相等运算符会先将数据进行类型转换，然后再用严格相等运算符比较。</p>
+</blockquote>
+<p><strong>下面分成四种情况，讨论不同类型的值互相比较的规则</strong></p>
+<ol>
+<li><p><strong>原始类型</strong>的值会转换成数值再进行比较</p>
+</li>
+<li><p><strong>对象与原始类型值比较</strong> 对象转换成原始类型的值,再比较</p>
+</li>
+<li><p><strong>undefined 和 null</strong> 与其他类型数值比较返回 <code>false</code>,互与自身则返回<code>true</code></p>
+</li>
+<li><p><strong>相等运算符的缺点</strong></p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token number">0</span> <span class="token operator">==</span> <span class="token string">''</span>             <span class="token comment" spellcheck="true">// true</span>
+<span class="token number">0</span> <span class="token operator">==</span> <span class="token string">'0'</span>            <span class="token comment" spellcheck="true">// true</span>
+
+<span class="token number">2</span> <span class="token operator">==</span> <span class="token boolean">true</span>           <span class="token comment" spellcheck="true">// false</span>
+<span class="token number">2</span> <span class="token operator">==</span> <span class="token boolean">false</span>          <span class="token comment" spellcheck="true">// false</span>
+
+<span class="token boolean">false</span> <span class="token operator">==</span> <span class="token string">'false'</span>    <span class="token comment" spellcheck="true">// false</span>
+<span class="token boolean">false</span> <span class="token operator">==</span> <span class="token string">'0'</span>        <span class="token comment" spellcheck="true">// true</span>
+
+<span class="token boolean">false</span> <span class="token operator">==</span> undefined  <span class="token comment" spellcheck="true">// false</span>
+<span class="token boolean">false</span> <span class="token operator">==</span> <span class="token keyword">null</span>       <span class="token comment" spellcheck="true">// false</span>
+<span class="token keyword">null</span> <span class="token operator">==</span> undefined   <span class="token comment" spellcheck="true">// true</span>
+
+<span class="token string">' \t\r\n '</span> <span class="token operator">==</span> <span class="token number">0</span>     <span class="token comment" spellcheck="true">// true</span></code></pre>
+<p>因此建议不要使用相等运算符, 最好只使用严格相等运算符</p>
+</li>
+</ol>
+<h2 id="布尔运算符"><a href="#布尔运算符" class="headerlink" title="布尔运算符"></a>布尔运算符</h2><p>布尔运算符用于将表达式转为布尔值，一共包含四个运算符。</p>
+<ul>
+<li>取反运算符：<code>!</code></li>
+<li>且运算符：<code>&amp;&amp;</code></li>
+<li>或运算符：<code>||</code></li>
+<li>三元运算符：<code>?:</code></li>
+</ul>
+<h3 id="取反运算符"><a href="#取反运算符" class="headerlink" title="取反运算符 (!)"></a>取反运算符 (!)</h3><p>对于非布尔值, 取反会将其 转为布尔值, 以下6个值取反后为 <code>true</code>, 其他值都为<code>false</code>:</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>false</code></li>
+<li><code>0</code></li>
+<li><code>NaN</code></li>
+<li>空字符串（<code>&#39;&#39;</code>）</li>
+</ul>
+<blockquote>
+<p>如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与<code>Boolean</code>函数的作用相同。这是一种常用的类型转换的写法。</p>
+</blockquote>
+<h3 id="且运算符-amp-amp"><a href="#且运算符-amp-amp" class="headerlink" title="且运算符 (&amp;&amp;)"></a>且运算符 (&amp;&amp;)</h3><p>规则: 如果一个运算子的布尔值为 <code>true</code>, 则返回第二个运算子的值(注意是值, 不是布尔值); 如果第一个运算子的布尔值为<code>false</code>, 则直接返回一第一个子运算符的值, 不再对第二个运算子求值</p>
+<pre class=" language-js"><code class="language-js"><span class="token string">'t'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span> <span class="token comment" spellcheck="true">// ""</span>
+<span class="token string">'t'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'f'</span> <span class="token comment" spellcheck="true">// "f"</span>
+<span class="token string">'t'</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 3</span>
+<span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'f'</span> <span class="token comment" spellcheck="true">// ""</span>
+<span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span> <span class="token comment" spellcheck="true">// ""</span>
+
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span> x <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
+x <span class="token comment" spellcheck="true">// 1</span></code></pre>
+<p>这种只通过第一个表达式的值，控制是否运行第二个表达式的机制，就称为“短路”（short-cut）。有些程序员喜欢用它取代<code>if</code>结构，比如下面是一段<code>if</code>结构的代码，就可以用且运算符改写。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 等价于</span>
+
+i <span class="token operator">&amp;&amp;</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>且运算符可以多个连用，这时返回第一个布尔值为<code>false</code>的表达式的值。如果所有表达式的布尔值都为<code>true</code>，则返回最后一个表达式的值。</p>
+<pre class=" language-js"><code class="language-js"><span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'foo'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'foo'</span> <span class="token operator">&amp;&amp;</span> <span class="token boolean">true</span>
+<span class="token comment" spellcheck="true">// ''</span>
+
+<span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> <span class="token number">3</span>
+<span class="token comment" spellcheck="true">// 3</span></code></pre>
+<h3 id="或运算符"><a href="#或运算符" class="headerlink" title="或运算符 (||)"></a>或运算符 (||)</h3><p>规则 : 如果第一个运算子的布尔值为 <code>true</code> , 则返回第一个运算子的值, 且不再对第二个运算子求值; 如果第一个运算子的布尔值为 <code>false</code> , 则返回第二个运算子的值;</p>
+<pre class=" language-js"><code class="language-js"><span class="token string">'t'</span> <span class="token operator">||</span> <span class="token string">''</span> <span class="token comment" spellcheck="true">// "t"</span>
+<span class="token string">'t'</span> <span class="token operator">||</span> <span class="token string">'f'</span> <span class="token comment" spellcheck="true">// "t"</span>
+<span class="token string">''</span> <span class="token operator">||</span> <span class="token string">'f'</span> <span class="token comment" spellcheck="true">// "f"</span>
+<span class="token string">''</span> <span class="token operator">||</span> <span class="token string">''</span> <span class="token comment" spellcheck="true">// ""</span></code></pre>
+<p>短路规则也适用: </p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token boolean">true</span> <span class="token operator">||</span> <span class="token punctuation">(</span>x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+x <span class="token comment" spellcheck="true">// 1</span></code></pre>
+<p>或运算符可以多个连用，这时返回第一个布尔值为<code>true</code>的表达式的值。如果所有表达式都为<code>false</code>，则返回最后一个表达式的值。</p>
+<pre class=" language-js"><code class="language-js"><span class="token boolean">false</span> <span class="token operator">||</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token string">''</span> <span class="token operator">||</span> <span class="token number">4</span> <span class="token operator">||</span> <span class="token string">'foo'</span> <span class="token operator">||</span> <span class="token boolean">true</span>
+<span class="token comment" spellcheck="true">// 4</span>
+
+<span class="token boolean">false</span> <span class="token operator">||</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token string">''</span>
+<span class="token comment" spellcheck="true">// ''</span></code></pre>
+<p>或运算符常用于为一个变量设置默认值。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">saveText</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  text <span class="token operator">=</span> text <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 或者写成</span>
+<span class="token function">saveText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>text <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span></code></pre>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符 (? :)"></a>三元运算符 (? :)</h3><p>三元条件运算符由问号（?）和冒号（:）组成，分隔三个表达式。它是 JavaScript 语言唯一一个需要三个运算子的运算符。</p>
+<ul>
+<li>通常来说，三元条件表达式与<code>if...else</code>语句具有同样表达效果，前者可以表达的，后者也能表达。但是两者具有一个重大差别，<code>if...else</code>是语句，没有返回值；三元条件表达式是表达式，具有返回值。</li>
+</ul>
+<pre class=" language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token boolean">true</span> <span class="token operator">?</span> <span class="token string">'T'</span> <span class="token punctuation">:</span> <span class="token string">'F'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>上面代码中，<code>console.log</code>方法的参数必须是一个表达式，这时就只能使用三元条件表达式。如果要用<code>if...else</code>语句，就必须改变整个代码写法了。</p>
+<h3 id="二进制运算符-没看"><a href="#二进制运算符-没看" class="headerlink" title="二进制运算符 (没看)"></a>二进制运算符 (没看)</h3><h3 id="其他运算符和运算顺序"><a href="#其他运算符和运算顺序" class="headerlink" title="其他运算符和运算顺序"></a>其他运算符和运算顺序</h3><ol>
+<li><p>void运算符: 主要用途是在浏览器的书签工具, 以及在超链接中插入代码防止网页跳转</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"http://example.com"</span> onclick<span class="token operator">=</span><span class="token string">"f(); return false;"</span><span class="token operator">></span>点击<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">// void运算符可以取代上面的写法。</span>
+<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"javascript: void(f())"</span><span class="token operator">></span>文字<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span></code></pre>
+<p>下面是一个更实际的例子，用户点击链接提交表单，但是不产生页面跳转。</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript: void(document.form.submit())<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  提交
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>逗号运算符: 用于对两个表达式求值, 并返回后一个表达式; </p>
+<ul>
+<li><p>逗号运算符的一个用途是，在返回一个值之前，进行一些辅助操作</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span> <span class="token comment" spellcheck="true">// "b"</span>
+
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">++</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+x <span class="token comment" spellcheck="true">// 1</span>
+y <span class="token comment" spellcheck="true">// 10</span></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h3><p>这五个运算符的优先级从高到低依次为：小于等于（<code>&lt;=</code>)、严格相等（<code>===</code>）、或（<code>||</code>）、三元（<code>?:</code>）、等号（<code>=</code>）</p>
+<h3 id="圆括号的作用"><a href="#圆括号的作用" class="headerlink" title="圆括号的作用"></a>圆括号的作用</h3><p>圆括号 <code>()</code>用来提高运算的优先级, 它的优先级最高;</p>
+<p><strong>圆括号不是运算符，而是一种语法结构。</strong></p>
+<p>它一共有两种用法：</p>
+<ul>
+<li>一种是把表达式放在圆括号之中，提升运算的优先级；</li>
+<li>另一种是跟在函数的后面，作用是调用函数。</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《JavaScript基础复习2-运算符》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/10/29/JavaScript基础复习2-运算符/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                lttztt
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Mw4gli0DEi5PNw9aUC8Psveh-gzGzoHsz',
+        appKey: 'cOhYzDDrLg1j0YagOeH4QvNo',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/10/29/JavaScript基础复习3-语法/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript基础复习3-语法">
+                        
+                        <span class="card-title">JavaScript基础复习3-语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            表达式和语句的区别
+表达式一般都有值，语句可能有也可能没有
+语句一般会改变环境（声明、赋值）
+
+标识符规则
+
+第一个字符可以是Unicode字母或$和____符号或者中文
+后面的自身除了这些还能是数字。
+
+if else语句
+{}在语句只有
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Front-End/" class="post-category" target="_blank">
+                                    Front-End
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/10/28/JavaScript基础复习1-前言+数据类型/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JavaScript基础复习1-前言+数据类型">
+                        
+                        <span class="card-title">JavaScript基础复习1-前言+数据类型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            要点前言和基础语法
+脚本语言:不具备编写操作系统的能力
+
+JavaScript 也是一种嵌入式（embedded）语言。
+
+变量就是给值起名
+
+JavaScript引擎的工作方式是:先解释代码.在一行行执行.
+
+var a;
+console
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Front-End/" class="post-category" target="_blank">
+                                    Front-End
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&nbsp;&copy;<a href="https://lttztt.github.io/" target="_blank">lttztt</a>&nbsp;基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
+            <br>
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+
+                function createtime() {
+                    var grt = new Date("03/15/2017 00:00:00");
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lttztt" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zhethink@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1169115474" class="tooltipped" data-tooltip="QQ联系我: 1169115474" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
